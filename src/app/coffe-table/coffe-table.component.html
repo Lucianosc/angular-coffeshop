@@ -1,0 +1,35 @@
+<h3>{{title}}</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Nombre</th>
+            <th>Intensidad</th>
+            <th>Precio</th>
+            <th>Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><img [src]="coffe.img" [alt]="coffe.name"></td>
+            <td>{{coffe.name}}</td>
+            <td>{{coffe.intensity}}</td>
+            <td>{{coffe.price}}</td>
+            <td>{{coffe.stock}}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Colombian supremo</td>
+            <td>Suave</td>
+            <td>120</td>
+            <td>800</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Etiopian</td>
+            <td>Fuerte</td>
+            <td>160</td>
+            <td>700</td>
+        </tr>
+    </tbody>
+</table>
