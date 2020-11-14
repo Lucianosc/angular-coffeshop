@@ -6,15 +6,24 @@ import { AppComponent } from './app.component';
 import { CoffeTableComponent } from './coffe-table/coffe-table.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
+import { FormsModule } from '@angular/forms';
+import { CoffeshopShopComponent } from './coffeshop-shop/coffeshop-shop.component';
+import { CoffeshopHomeComponent } from './coffeshop-home/coffeshop-home.component';
+import { CoffeshopAboutComponent } from './coffeshop-about/coffeshop-about.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     CoffeTableComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    CoffeshopShopComponent,
+    CoffeshopHomeComponent,
+    CoffeshopAboutComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

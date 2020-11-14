@@ -1,5 +1,5 @@
 <h3>{{title}}</h3>
-<table class="table">
+<table class="table text-center">
     <thead>
         <tr>
             <th>Image</th>
@@ -7,29 +7,32 @@
             <th>Intensidad</th>
             <th>Precio</th>
             <th>Stock</th>
+            <th>Compra</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr *ngFor="let coffe of coffes" [ngClass]="{'offer': coffe.offer}">
             <td><img [src]="coffe.img" [alt]="coffe.name"></td>
             <td>{{coffe.name}}</td>
             <td>{{coffe.intensity}}</td>
-            <td>{{coffe.price}}</td>
-            <td>{{coffe.stock}}</td>
+            <td>{{coffe.price | currency}}</td>
+            <td><span *ngIf="coffe.stock == 0" class="badge badge-warning"> Sin stock</span></td>
+            <td>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <button type="button" class="btn btn-secondary btn-sm" (click)="downQuantity(coffe)">
+                            -
+                        </button>
+                    </div>
+                    <input type="number" [(ngModel)]="coffe.quantity" (keyup)="onChangeQuantity($event, coffe)">
+                    <div class="input-group-append">
+                        <button type="button" class="btn btn-secondary btn-sm" (click)="upQuantity(coffe)">
+                            +
+                        </button>
+                    </div>
+                </div>
+            </td>
         </tr>
-        <tr>
-            <td></td>
-            <td>Colombian supremo</td>
-            <td>Suave</td>
-            <td>120</td>
-            <td>800</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>Etiopian</td>
-            <td>Fuerte</td>
-            <td>160</td>
-            <td>700</td>
-        </tr>
+
     </tbody>
 </table>
