@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CoffeCartService } from '../coffe-cart.service';
 import { Coffe } from './coffe';
 
 @Component({
@@ -9,7 +10,7 @@ import { Coffe } from './coffe';
 export class CoffeTableComponent implements OnInit {
 
   title = "Coffe table";
-
+  
   coffes: Coffe[] = [
     {
       
@@ -51,26 +52,16 @@ export class CoffeTableComponent implements OnInit {
       quantity: 0
     }
   ]
-  constructor() { }
+
+  constructor(private cart: CoffeCartService) { 
+  }
 
   ngOnInit(): void {
   }
 
-  upQuantity(coffe : Coffe){
-    if(coffe.stock > coffe.quantity){
-      coffe.quantity++;
-    }
-  }
-
-  downQuantity(coffe : Coffe){
-    if(coffe.quantity > 0){
-      coffe.quantity--;
-    }
-  }
-
-  onChangeQuantity(event, coffe : Coffe): void{
-    if(coffe.quantity > coffe.stock){
-      coffe.quantity = coffe.stock;
-    }
+  addToCart(coffe){
+    this.cart.addToCart(coffe);
+    coffe.stock -= coffe.quantity;
+    coffe.quantity = 0;
   }
 }

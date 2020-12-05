@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { CoffeshopShopComponent } from './coffeshop-shop/coffeshop-shop.component';
 import { CoffeshopHomeComponent } from './coffeshop-home/coffeshop-home.component';
 import { CoffeshopAboutComponent } from './coffeshop-about/coffeshop-about.component';
+import { InputIntegerComponent } from './input-integer/input-integer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CoffeshopAboutComponent } from './coffeshop-about/coffeshop-about.compo
     ShoppingCartComponent,
     CoffeshopShopComponent,
     CoffeshopHomeComponent,
-    CoffeshopAboutComponent
+    CoffeshopAboutComponent,
+    InputIntegerComponent
   ],
   imports: [
     BrowserModule,
